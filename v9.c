@@ -14,7 +14,7 @@ main()
 	scanf("%d",&b);
 
 
-	float x=-b/float(a);
+	float x=-b/(float)a;
 	printf("varijabla x je: ");
 	printf("%.2f\n",x);
 }
