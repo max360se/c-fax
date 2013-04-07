@@ -10,7 +10,7 @@ ako je cijena sa pdv-om veca od 1000kn kupac ima popust na gotovinu od 5%
 #define	PDV 0.25 
 #define PG	0.05	/* popust na gotovinu */
 
-main()
+int main(void)
 {
 	float cijenabezpdv, cijenasapdv, konacnacijena;
 	int rate;
@@ -24,8 +24,10 @@ main()
 	printf("Cijena sa PDV-om iznosi %.2f\n", cijenasapdv);
 	printf("Unesite g ako placate gotovinom i k ako karticom: ");
 
-	putchar('\n');
-	np = getchar();
+/* dok je getchar razlicit od \n ili EOF np uzme getchar */
+
+	while ((np = getchar()) != '\n' && np != EOF);
+		np = getchar();
 
 	printf("\n");
 	printf("Odabrali ste %c\n", np);
